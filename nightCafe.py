@@ -10,21 +10,21 @@ s = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=s)
 #driver.maximize_window()
 
-#navigate to Nightcafe
+#Navigate to Nightcafe
 import time
 driver.get("https://creator.nightcafe.studio/login?view=password-login")
 time.sleep(10)
 
-#enter nightcafe login and password text field
+#Enter nightcafe login and password text field
 from selenium.webdriver.common.by import By
 driver.find_element(By.NAME, "email").send_keys(creds.email)
 driver.find_element(By.NAME, "password").send_keys(creds.password)
 
-#click login
+#Click login
 driver.find_element(By.XPATH, '//*[@id="__next"]/div[3]/div[2]/div[2]/div/form/div[2]/div[3]/button').click()
 # driver.find_element(By.TAG_NAME, "button").click()
 
-#click top left inbox notifications button
+#Click top left inbox notifications button
 time.sleep(3)
 driver.find_element(By.CLASS_NAME, "css-imrmng").click()
 
@@ -33,7 +33,7 @@ time.sleep(5)
 #driver.find_element(By.CLASS_NAME, "css-10r9n45").click()
 driver.find_element(By.XPATH, '//*[@id="modals"]/div/div[2]/div[3]/div/div[2]/div[2]/button').click()
 
-#close the browser
+#Close the browser
 time.sleep(3)
 driver.close()
 
